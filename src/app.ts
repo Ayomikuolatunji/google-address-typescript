@@ -22,7 +22,7 @@ const searchFunction=async(event:Event)=>{
         throw new Error("Could not fetch location!");
       }
       const coordinates = response.data.results[0].geometry.location;
-       const  map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+        new google.maps.Map(document.getElementById("map") as HTMLElement, {
         center:coordinates,
         zoom: 8,
       });
@@ -39,7 +39,6 @@ const searchFunction=async(event:Event)=>{
         position: coordinates,
         map: maps,
       });
-      console.log(map)
    } catch (err) {
         console.log(err)
    }
